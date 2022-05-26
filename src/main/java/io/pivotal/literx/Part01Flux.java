@@ -2,6 +2,9 @@ package io.pivotal.literx;
 
 import reactor.core.publisher.Flux;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Learn how to create Flux instances.
  *
@@ -14,35 +17,52 @@ public class Part01Flux {
 
 	// TODO Return an empty Flux
 	Flux<String> emptyFlux() {
-		return null;
+
+		Flux<String> fluxExample= Flux.empty();
+
+		return fluxExample;
 	}
 
 //========================================================================================
 
 	// TODO Return a Flux that contains 2 values "foo" and "bar" without using an array or a collection
 	Flux<String> fooBarFluxFromValues() {
-		return null;
+
+		Flux<String> fluxExample= Flux.just("foo", "bar");
+
+		return fluxExample;
 	}
 
 //========================================================================================
 
 	// TODO Create a Flux from a List that contains 2 values "foo" and "bar"
 	Flux<String> fooBarFluxFromList() {
-		return null;
+
+		List<String> lista = new ArrayList<>();
+		lista.add("foo");
+		lista.add("bar");
+		Flux<String> fluxExample= Flux.fromIterable(lista);
+
+		return fluxExample;
 	}
 
 //========================================================================================
 
 	// TODO Create a Flux that emits an IllegalStateException
 	Flux<String> errorFlux() {
-		return null;
+
+		Flux<String> fluxExample= Flux.error(new IllegalStateException());
+
+		return fluxExample;
 	}
 
 //========================================================================================
 
 		// TODO Create a Flux that emits increasing values from 0 to 9 each 100ms
-	Flux<Long> counter() {
-		return null;
+	Flux<Integer> counter() {
+
+		Flux<Integer> fluxExample = Flux.range(0, 10);
+		return fluxExample;
 	}
 
 }
